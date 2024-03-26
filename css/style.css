@@ -321,7 +321,7 @@ body .h1 {
   display: block;
   margin-top: 3rem;
   margin-bottom: 1rem;
-  color: #8ec07c;
+  color: $color-forground;
   letter-spacing: 0.01em;
   font-weight: 700;
   font-style: normal;
@@ -335,14 +335,14 @@ body .h2 {
   display: block;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
-  color: #b8bb26;
+  color: #fabd2f;
   text-transform: none;
   letter-spacing: normal;
   font-weight: bold;
   font-size: 1rem;
 }
 body h3 {
-  color: #b8bb26;
+  color: #fabd2f;
   text-decoration: underline;
   font-weight: bold;
   font-size: 0.9rem;
@@ -426,7 +426,7 @@ body table {
 body th {
   padding: 8px;
   border-bottom: 1px dashed #928374;
-  color: #b8bb26;
+  color: #fabd2f;
   font-weight: bold;
   font-size: 13px;
 }
@@ -589,6 +589,11 @@ body {
     text-align: justify;
   }
 }
+.animated-text,
+#header h1,
+#header .h1 {
+  animation: colorAnimation 3s ease-in-out infinite;
+}
 #header {
   margin: 0 auto 2rem;
   width: 100%;
@@ -603,7 +608,6 @@ body {
   font-style: normal;
   font-size: 1.5rem;
   line-height: 2rem;
-  animation: rainbow 5s linear infinite;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
@@ -639,7 +643,7 @@ body {
 }
 #header #nav ul a {
   margin-right: 15px;
-  color: #8ec07c;
+  color: #ebdbb2;
   animation: rainbow 5s linear infinite;
 }
 #header #nav ul a:hover {
@@ -707,108 +711,48 @@ body {
     font-size: 1rem;
   }
 }
-@-moz-keyframes rainbow {
+@-moz-keyframes colorAnimation {
   0% {
-    color: #f00;
+    color: #ff9a3c; /* Base color - Vibrant orange */
   }
-  14% {
-    color: #ff7f00;
-  }
-  28% {
-    color: #ff0;
-  }
-  42% {
-    color: #0f0;
-  }
-  56% {
-    color: #00f;
-  }
-  70% {
-    color: #4b0082;
-  }
-  84% {
-    color: #9400d3;
+  50% {
+    color: #ffc93c; /* Base color - Warm yellow */
   }
   100% {
-    color: #f00;
+    color: #ff9a3c; /* Base color - Vibrant orange */
   }
 }
-@-webkit-keyframes rainbow {
+@-webkit-keyframes colorAnimation {
   0% {
-    color: #f00;
+    color: #ff9a3c; /* Base color - Vibrant orange */
   }
-  14% {
-    color: #ff7f00;
-  }
-  28% {
-    color: #ff0;
-  }
-  42% {
-    color: #0f0;
-  }
-  56% {
-    color: #00f;
-  }
-  70% {
-    color: #4b0082;
-  }
-  84% {
-    color: #9400d3;
+  50% {
+    color: #ffc93c; /* Base color - Warm yellow */
   }
   100% {
-    color: #f00;
+    color: #ff9a3c; /* Base color - Vibrant orange */
   }
 }
-@-o-keyframes rainbow {
+@-o-keyframes colorAnimation {
   0% {
-    color: #f00;
+    color: #ff9a3c; /* Base color - Vibrant orange */
   }
-  14% {
-    color: #ff7f00;
-  }
-  28% {
-    color: #ff0;
-  }
-  42% {
-    color: #0f0;
-  }
-  56% {
-    color: #00f;
-  }
-  70% {
-    color: #4b0082;
-  }
-  84% {
-    color: #9400d3;
+  50% {
+    color: #ffc93c; /* Base color - Warm yellow */
   }
   100% {
-    color: #f00;
+    color: #ff9a3c; /* Base color - Vibrant orange */
   }
 }
-@keyframes rainbow {
+@keyframes colorAnimation {
   0% {
-    color: #f00;
+    color: #ff9a3c; /* Base color - Vibrant orange */
   }
-  14% {
-    color: #ff7f00;
-  }
-  28% {
-    color: #ff0;
-  }
-  42% {
-    color: #0f0;
-  }
-  56% {
-    color: #00f;
-  }
-  70% {
-    color: #4b0082;
-  }
-  84% {
-    color: #9400d3;
+  50% {
+    color: #ffc93c; /* Base color - Warm yellow */
   }
   100% {
-    color: #f00;
+    color: #ff9a3c; /* Base color - Vibrant orange */
   }
 }
 #header-post {
@@ -853,7 +797,7 @@ body {
   margin-left: 15px;
 }
 #header-post #menu-icon:hover {
-  color: #8ec07c;
+  color: #fabd2f;
 }
 #header-post #menu-icon-tablet {
   float: right;
@@ -881,7 +825,7 @@ body {
   margin-right: 2rem;
 }
 #header-post #nav {
-  color: #8ec07c;
+  color: #ebdbb2;
   letter-spacing: 0.01em;
   font-weight: 200;
   font-style: normal;
@@ -901,7 +845,7 @@ body {
   background-repeat: repeat-x;
 }
 #header-post #nav ul li {
-  border-right: 1px dotted #8ec07c;
+  border-right: 1px dotted #ebdbb2;
 }
 #header-post #nav ul li:last-child {
   margin-right: 0;
@@ -1200,14 +1144,14 @@ article header .posttitle {
   text-transform: none;
   font-size: 1.5em;
   line-height: 1.25;
-  color: #ebdbb2;
+  color: #fabd2f;
 }
 article header .meta {
   margin-top: 0;
   margin-bottom: 1rem;
 }
 article header .meta * {
-  color: #fabd2f;
+  color: #ebdbb2;
   font-size: 0.85rem;
 }
 article header .author {
@@ -1222,7 +1166,7 @@ article .content h2:before {
   position: absolute;
   top: -4px;
   left: -1rem;
-  color: #8ec07c;
+  color: #ebdbb2;
   content: "#";
   font-weight: bold;
   font-size: 1.2rem;
@@ -1754,7 +1698,7 @@ code {
   transition: opacity 0.2s ease-in;
 }
 .highlight .btn-copy:hover {
-  color: #8ec07c;
+  color: #b8bb26;
 }
 .highlight pre {
   margin: 0;
@@ -1771,6 +1715,9 @@ code {
 }
 .highlight .line {
   height: 22px;
+}
+#find-me {
+  margin-top: auto;
 }
 #Blog .h1 a {
   color: #fabd2f;
