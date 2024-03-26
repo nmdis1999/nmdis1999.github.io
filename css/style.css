@@ -629,7 +629,7 @@ body {
   -webkit-filter: grayscale(100%);
 }
 #header #nav {
-  color: #b8bb26;
+  color: #fabd2f;
   letter-spacing: 0.01em;
   font-weight: 200;
   font-style: normal;
@@ -647,7 +647,7 @@ body {
   animation: rainbow 5s linear infinite;
 }
 #header #nav ul a:hover {
-  background-image: linear-gradient(transparent, transparent 5px, #8ec07c 5px, #8ec07c);
+  background-image: linear-gradient(transparent, transparent 5px, #fabd2f 5px, #fabd2f);
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
@@ -696,6 +696,7 @@ body {
     right: 1rem;
     display: inline-block;
     text-align: center;
+    color: #ccc olor-accent-3;
   }
   #header #nav ul.responsive li {
     display: block;
@@ -805,7 +806,7 @@ body {
   margin-left: 15px;
 }
 #header-post #menu-icon-tablet:hover {
-  color: #8ec07c;
+  color: #fabd2f;
 }
 #header-post #top-icon-tablet {
   position: fixed;
@@ -815,17 +816,16 @@ body {
   margin-left: 15px;
 }
 #header-post #top-icon-tablet:hover {
-  color: #8ec07c;
+  color: #fabd2f;
 }
 #header-post .active {
-  color: #8ec07c;
+  color: #fabd2f;
 }
 #header-post #menu {
   display: none;
   margin-right: 2rem;
 }
 #header-post #nav {
-  color: #ebdbb2;
   letter-spacing: 0.01em;
   font-weight: 200;
   font-style: normal;
@@ -836,10 +836,10 @@ body {
 }
 #header-post #nav ul a {
   margin-right: 15px;
-  color: #8ec07c;
+  color: #fabd2f;
 }
 #header-post #nav ul a:hover {
-  background-image: linear-gradient(transparent, transparent 5px, #8ec07c 5px, #8ec07c);
+  background-image: linear-gradient(transparent, transparent 5px, $color-forground 5px, $color-forground);
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
