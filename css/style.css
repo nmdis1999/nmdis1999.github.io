@@ -616,17 +616,25 @@ body {
   color: inherit;
   text-decoration: none;
 }
+#header #title-container {
+  display: flex;
+  align-items: center;
+}
 #header #logo {
   display: inline-block;
   float: left;
+  vertical-align: middle;
   margin-right: 20px;
-  width: 50px;
-  height: 50px;
+  width: 200px;
+  height: 200px;
   border-radius: 5px;
-  background-size: 50px 50px;
+  background-size: 200px 200px;
   background-repeat: no-repeat;
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
+}
+#header #title h1 {
+  margin: 0;
 }
 #header #nav {
   color: #fabd2f;
@@ -677,7 +685,7 @@ body {
   #header #title {
     display: table;
     margin-right: 5rem;
-    min-height: 50px;
+    min-height: 0px;
   }
   #header #title h1 {
     display: table-cell;
@@ -708,7 +716,7 @@ body {
   }
   #header #nav li:not(:first-child) {
     padding-top: 1rem;
-    padding-left: 70px;
+    padding-left: 20px;
     font-size: 1rem;
   }
 }
@@ -1719,6 +1727,29 @@ code {
 }
 #find-me {
   margin-top: auto;
+}
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background-color: #e0e0e0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+.progress {
+  width: 0;
+  height: 100%;
+  background-color: #1d2021;
+  transition: width 0.3s ease;
+}
+.progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  z-index: 9999;
 }
 #Blog .h1 a {
   color: #fabd2f;
