@@ -1,0 +1,192 @@
+:root {
+    --text: #1f2328;
+    --muted: #6a737d;
+    --border: #d0d7de;
+    --code-bg: #f6f8fa;
+
+    --page-width: 1180px;
+    --article-width: 900px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    color: var(--text);
+
+    line-height: 1.65;
+}
+
+nav,
+main,
+footer {
+    width: min(var(--page-width), calc(100% - 48px));
+    margin: 0 auto;
+}
+
+article {
+    width: min(var(--article-width), 100%);
+}
+
+nav {
+    display: flex;
+    gap: 24px;
+
+    padding: 24px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+nav a {
+    color: inherit;
+    text-decoration: none;
+}
+
+nav a:first-child {
+    font-weight: 600;
+    margin-right: auto;
+}
+
+main {
+    padding: 48px 0 80px;
+}
+
+article h1 {
+    font-size: 2.4rem;
+    line-height: 1.15;
+    margin-bottom: 8px;
+}
+
+article h2 {
+    margin-top: 48px;
+}
+
+article h3 {
+    margin-top: 36px;
+}
+
+.date {
+    color: var(--muted);
+    margin-top: 0;
+}
+
+pre {
+    overflow-x: auto;
+
+    padding: 18px;
+
+    background: var(--code-bg);
+
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+
+code {
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        monospace;
+}
+
+p code {
+    padding: 2px 5px;
+    background: var(--code-bg);
+    border-radius: 4px;
+}
+
+a {
+    color: #0969da;
+}
+
+footer {
+    padding: 24px 0 48px;
+
+    color: var(--muted);
+
+    border-top: 1px solid var(--border);
+}
+
+.brain-cell-meter {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.72rem;
+
+    color: var(--muted);
+}
+
+.brain-cell-label {
+    white-space: nowrap;
+}
+
+.battery {
+    position: relative;
+
+    width: 30px;
+    height: 13px;
+
+    border: 1.5px solid currentColor;
+    border-radius: 3px;
+
+    padding: 2px;
+}
+
+.battery::after {
+    content: "";
+
+    position: absolute;
+
+    right: -4px;
+    top: 3px;
+
+    width: 2px;
+    height: 5px;
+
+    background: currentColor;
+    border-radius: 0 1px 1px 0;
+}
+
+.battery-level {
+    width: 37%;
+    height: 100%;
+
+    background: currentColor;
+    border-radius: 1px;
+}
+
+.brain-cell-value {
+    min-width: 3ch;
+}
+
+.post-gif {
+    display: block;
+    width: min(100%, 520px);
+    height: auto;
+    margin: 24px 0;
+    border-radius: 8px;
+}
+
+.godbolt {
+    display: block;
+    width: 100%;
+    height: 650px;
+    margin: 32px 0;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
