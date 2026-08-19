@@ -2,11 +2,15 @@
     --text: #1f2328;
     --muted: #6a737d;
     --border: #d0d7de;
-    --code-bg: #f6f8fa;
+    --code-bg: #f8f6e8;
+    --paper: #fffdf6;
+    --card-bg: #ffffff;
 
     --page-width: 1180px;
     --article-width: 900px;
     --footer-height: 72px;
+    --calendar-gap: 32px;
+    --calendar-size: 360px;
 }
 
 * {
@@ -27,6 +31,9 @@ body {
 
     line-height: 1.65;
 }
+
+/* warm paper background for the whole site */
+body { background: var(--paper); }
 
 nav,
 main,
@@ -199,9 +206,11 @@ footer {
 .calendar-component {
     position: fixed;
     top: 120px;
-    right: max(8px, calc((100% - min(var(--page-width), calc(100% - 48px))) / 2 - 480px));
-    width: min(420px, calc(100vh - var(--footer-height) - 120px - 24px));
+    /* responsive square size */
+    width: var(--calendar-size);
     aspect-ratio: 1 / 1;
+    /* keep the calendar outside the centered content but clamp extremes */
+    right: max(12px, calc((100% - min(var(--page-width), calc(100% - 48px))) / 2 - var(--calendar-gap)));
     z-index: 60;
 }
 
@@ -209,7 +218,7 @@ footer {
     border: 1px solid var(--border);
     border-radius: 8px;
     padding: 14px;
-    background: #fff;
+    background: var(--card-bg);
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -226,6 +235,23 @@ footer {
 /* responsive: hide calendar on narrow screens */
 @media (max-width: 980px) {
   .calendar-component { display: none; }
+}
+
+/* narrower desktop sizes - avoid cramped placement */
+@media (max-width: 1400px) {
+    .calendar-component {
+        width: clamp(260px, 30vw, 380px);
+        right: 18px;
+        top: 100px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .calendar-component {
+        width: 300px;
+        right: 12px;
+        top: 96px;
+    }
 }
 
 .calendar-card #calendar {
