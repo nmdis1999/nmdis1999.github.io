@@ -6,6 +6,7 @@
 
     --page-width: 1180px;
     --article-width: 900px;
+    --footer-height: 72px;
 }
 
 * {
@@ -58,7 +59,7 @@ nav a:first-child {
 }
 
 main {
-    padding: 48px 0 80px;
+    padding: 48px 0 calc(var(--footer-height) + 24px);
 }
 
 article h1 {
@@ -112,10 +113,14 @@ a {
 }
 
 footer {
-    padding: 24px 0 48px;
-
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: var(--footer-height);
+    padding: 16px 0;
+    background: white;
     color: var(--muted);
-
     border-top: 1px solid var(--border);
 }
 
@@ -190,3 +195,62 @@ footer {
     border: 1px solid var(--border);
     border-radius: 8px;
 }
+
+.calendar-component {
+    position: fixed;
+    top: 120px;
+    right: max(8px, calc((100% - min(var(--page-width), calc(100% - 48px))) / 2 - 480px));
+    width: min(420px, calc(100vh - var(--footer-height) - 120px - 24px));
+    aspect-ratio: 1 / 1;
+    z-index: 60;
+}
+
+.calendar-card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 0 8px 28px rgba(28,31,35,0.08);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+/* responsive: hide calendar on narrow screens */
+@media (max-width: 980px) {
+  .calendar-component { display: none; }
+}
+
+.calendar-card #calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    font-size: 0.95rem;
+    /* allow calendar grid to grow and scroll if necessary inside square card */
+    flex: 1 1 auto;
+    overflow: auto;
+}
+
+.cal-day {
+    padding: 8px;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.cal-day:hover { background: #f6f8fa; }
+.cal-day.other-month { color: var(--muted); opacity: 0.6; }
+.cal-day.today { border: 1px solid #0969da; }
+.cal-badge { display:inline-block; background:#0969da; color:#fff; font-size:0.65rem; padding:2px 6px; border-radius:999px; margin-left:6px; }
+
+#dayTasks, .day-tasks { margin-top: 12px; }
+#tasksList { list-style: none; padding: 0; margin: 8px 0 0; }
+#tasksList li { display:flex; align-items:center; gap:8px; padding:6px 4px; border-bottom:1px dashed var(--border); }
+#tasksList li.completed { color: var(--muted); text-decoration: line-through; }

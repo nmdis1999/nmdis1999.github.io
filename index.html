@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>midlycompiled</title>
+
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="/">midlycompiled</a>
+      <a href="/">Here lies random stuff I learn ...</a>
+      <div class="brain-cell-meter" title="Brain cells remaining">
+          <span class="brain-cell-label">brain cells</span>
+          <div class="battery">
+              <div class="battery-level"></div>
+          </div>
+          <span class="brain-cell-value">37%</span>
+      </div>
+      <a href="https://github.com/nmdis1999">GitHub</a>
+    </nav>
+  </header>
+
+  <aside class="calendar-component" aria-label="Calendar">
+    <div class="calendar-card">
+      <div class="calendar-header">
+        <button id="prevMonth" aria-label="Previous">‹</button>
+        <div id="monthLabel"></div>
+        <button id="nextMonth" aria-label="Next">›</button>
+      </div>
+      <div id="calendar"></div>
+      <div id="dayTasks" class="day-tasks">
+        <h3 id="taskDateLabel"></h3>
+        <ul id="tasksList"></ul>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <section class="home-hero">
+      <h1>small potato stuff</h1>
+      <p>Here lies random stuff I learn and tinker with.</p>
+    </section>
+
+    <section class="posts">
+      <h2>Recent posts</h2>
+      <ul>
+        <li><a href="/posts/hello.html">hello</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Iti Shree</p>
+  </footer>
+  <script src="/static/calendar.js"></script>
+  <script src="/livereload.js"></script>
+</body>
+</html>

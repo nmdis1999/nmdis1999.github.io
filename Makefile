@@ -7,6 +7,7 @@ OUTPUTS := $(patsubst posts/%.tex,public/posts/%.html,$(POSTS))
 
 all: $(OUTPUTS)
 	cp -r static public/
+	cp index.html public/
 
 serve:
 	cd public && python3 -m http.server 8080
